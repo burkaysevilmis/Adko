@@ -12,7 +12,7 @@ import {
 const {width, heigth} = Dimensions.get('window');
 export default class Login extends Component {
   static navigationOptions = {
-    title: 'Login',
+    headerShown: false,
   };
 
   render() {
