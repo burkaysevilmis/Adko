@@ -40,6 +40,8 @@ target 'Adko' do
 
   pod 'RNScreens', :path => '../node_modules/react-native-screens'
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'AdkoTests' do
     inherit! :search_paths
     # Pods for testing
