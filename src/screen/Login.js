@@ -44,6 +44,7 @@ export default class Login extends Component {
             <TextInput
               placeholder="Şifre"
               placeholderTextColor="white"
+              secureTextEntry={true}
               style={{
                 width: '70%',
                 height: 45,
