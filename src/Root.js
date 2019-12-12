@@ -129,7 +129,7 @@ const Drawer = createDrawerNavigator(
       activeBackgroundColor: '#404E67',
     },
     drawerBackgroundColor: '#404E67',
-    drawerWidth: width / 2,
+    drawerWidth: width / 1.5,
     drawerType: 'slide',
   },
 );
