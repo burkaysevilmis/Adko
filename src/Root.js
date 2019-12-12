@@ -6,6 +6,7 @@ import { createAppContainer } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 import homeScreen from './screen/Home';
 import HomeTest from './screen/HomeTest';
+import loginScreen from './screen/Login';
 import Menu from './components/menu';
 const { width, heigth } = Dimensions.get('window');
 const HomeStack = createStackNavigator({
