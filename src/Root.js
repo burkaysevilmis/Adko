@@ -68,6 +68,14 @@ const HomeStack = createStackNavigator(
         },
       }),
     },
+  },
+  {
+    headerLayoutPreset: 'center',
+    initialRouteName: 'Login',
+  },
+);
+const VisitStartStack = createStackNavigator(
+  {
     VisitStart: {
       screen: VisitStart,
       navigationOptions: ({navigation}) => ({
@@ -82,7 +90,6 @@ const HomeStack = createStackNavigator(
   },
   {
     headerLayoutPreset: 'center',
-    initialRouteName: 'Login',
   },
 );
 const Drawer = createDrawerNavigator(
@@ -97,7 +104,7 @@ const Drawer = createDrawerNavigator(
       },
     },
     VisitStart: {
-      screen: VisitStart,
+      screen: VisitStartStack,
       navigationOptions: {
         drawerLabel: 'Ziyaret Başlangıç',
         style: {paddingRight: 10},
