@@ -1,71 +1,89 @@
-import React, { Component } from 'react';
-import { Dimensions } from 'react-native';
-import { createDrawerNavigator } from 'react-navigation-drawer';
-import { createStackNavigator } from 'react-navigation-stack';
-import { createAppContainer } from 'react-navigation';
+import React, {Component} from 'react';
+import {Dimensions} from 'react-native';
+import {createDrawerNavigator} from 'react-navigation-drawer';
+import {createStackNavigator} from 'react-navigation-stack';
+import {createAppContainer} from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 import homeScreen from './screen/Home';
 import newsDetail from './screen/News-detail';
+import VisitStart from './screen/VisitStart';
 import loginScreen from './screen/Login';
 import Menu from './components/menu';
-const { width, heigth } = Dimensions.get('window');
-const HomeStack = createStackNavigator({
+const {width, heigth} = Dimensions.get('window');
+const HomeStack = createStackNavigator(
+  {
     Home: {
-        screen: homeScreen,
-        navigationOptions: ({ navigation }) => ({
-            title: 'ADKO PORTAL',
-            headerTintColor: 'white',
-            headerLeft: <Menu navigation={navigation} />,
-            headerStyle: {
-                backgroundColor: '#404E67',
-
-            }
-        }),
-
+      screen: homeScreen,
+      navigationOptions: ({navigation}) => ({
+        title: 'ADKO PORTAL',
+        headerTintColor: 'white',
+        headerLeft: <Menu navigation={navigation} />,
+        headerStyle: {
+          backgroundColor: '#404E67',
+        },
+      }),
     },
     Login: {
-        screen: loginScreen,
-        
+      screen: loginScreen,
     },
     NewsDetail: {
-        screen: newsDetail,
-        navigationOptions: ({ navigation }) => ({
-            title: 'ADKO PORTAL',
-            headerTintColor: 'white',
-            headerLeft: <Menu navigation={navigation} />,
-            headerStyle: {
-                backgroundColor: '#404E67',
-
-            }
-        }),
+      screen: newsDetail,
+      navigationOptions: ({navigation}) => ({
+        title: 'ADKO PORTAL',
+        headerTintColor: 'white',
+        headerLeft: <Menu navigation={navigation} />,
+        headerStyle: {
+          backgroundColor: '#404E67',
+        },
+      }),
     },
-}, {
+    VisitStart: {
+      screen: VisitStart,
+      navigationOptions: ({navigation}) => ({
+        title: 'ADKO PORTAL',
+        headerTintColor: 'white',
+        headerLeft: <Menu navigation={navigation} />,
+        headerStyle: {
+          backgroundColor: '#404E67',
+        },
+      }),
+    },
+  },
+  {
     headerLayoutPreset: 'center',
-    initialRouteName: 'Home'
-
-},
-
+    initialRouteName: 'Login',
+  },
 );
-const Drawer = createDrawerNavigator({
+const Drawer = createDrawerNavigator(
+  {
     Home: {
-        screen: HomeStack,
-        navigationOptions: {
-            drawerLabel: 'Anasayfa',
-            drawerIcon: ({ tintColor }) => (
-                <Icon name="ios-home" size={22} color={tintColor} />
-            ),
-        },
+      screen: HomeStack,
+      navigationOptions: {
+        drawerLabel: 'Anasayfa',
+        drawerIcon: ({tintColor}) => (
+          <Icon name="ios-home" size={22} color={tintColor} />
+        ),
+      },
     },
-},
-    {
-        contentOptions: {
-            activeTintColor: 'white',
-            activeBackgroundColor: '#404E67',
-
-        },
-        drawerBackgroundColor: '#404E67',
-        drawerWidth: width / 2,
-        drawerType: 'slide',
-    }
-)
+    VisitStart: {
+      screen: VisitStart,
+      navigationOptions: {
+        drawerLabel: 'Ziyaret Başlangıç',
+        style: {paddingRight: 10},
+        drawerIcon: ({tintColor}) => (
+          <Icon name="ios-paper-plane" size={22} color={tintColor} />
+        ),
+      },
+    },
+  },
+  {
+    contentOptions: {
+      activeTintColor: 'white',
+      activeBackgroundColor: '#404E67',
+    },
+    drawerBackgroundColor: '#404E67',
+    drawerWidth: width / 2,
+    drawerType: 'slide',
+  },
+);
 export default createAppContainer(Drawer);
