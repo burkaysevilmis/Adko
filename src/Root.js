@@ -5,7 +5,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 import homeScreen from './screen/Home';
-import HomeTest from './screen/HomeTest';
+import newsDetail from './screen/News-detail';
 import loginScreen from './screen/Login';
 import Menu from './components/menu';
 const { width, heigth } = Dimensions.get('window');
@@ -25,13 +25,23 @@ const HomeStack = createStackNavigator({
     },
     Login: {
         screen: loginScreen,
+        
     },
-    Test: {
-        screen: HomeTest
+    NewsDetail: {
+        screen: newsDetail,
+        navigationOptions: ({ navigation }) => ({
+            title: 'ADKO PORTAL',
+            headerTintColor: 'white',
+            headerLeft: <Menu navigation={navigation} />,
+            headerStyle: {
+                backgroundColor: '#404E67',
+
+            }
+        }),
     },
 }, {
     headerLayoutPreset: 'center',
-    initialRouteName: 'Login'
+    initialRouteName: 'Home'
 
 },
 
@@ -46,16 +56,12 @@ const Drawer = createDrawerNavigator({
             ),
         },
     },
-
-    Test: {
-        screen: HomeStack
-    },
 },
     {
         contentOptions: {
             activeTintColor: 'white',
             activeBackgroundColor: '#404E67',
-            inactiveBackgroundColor: '#375649',
+
         },
         drawerBackgroundColor: '#404E67',
         drawerWidth: width / 2,

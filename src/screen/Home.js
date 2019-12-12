@@ -26,10 +26,10 @@ sistem üzerinden iletmenizi rica ederiz.</Text>
 
             <View style={{ paddingTop: 25, width: '100%', height: '20%', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
               <View>
-                <Text style={{ paddingLeft: 10, color: '#2CC3D9' }}>04/02/2019</Text>
+                <Text style={{ paddingLeft: 10, color: '#2CC3D9',fontSize:16 }}>04/02/2019</Text>
               </View>
               <View style={{ borderRadius: 15, justifyContent: 'flex-end', height: '70%', width: '25%', alignItems: 'center', justifyContent: 'center', backgroundColor: '#2CC3D9' }}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>this.props.navigation.navigate('NewsDetail')}>
                   <Text style={{ fontSize: 15, color: 'white' }}>
                     DETAY
               </Text>
