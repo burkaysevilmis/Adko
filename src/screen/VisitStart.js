@@ -71,13 +71,13 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   coordinatButtonContainer: {
-    width: '50%',
+    width: '75%',
     borderRadius: 15,
     backgroundColor: '#2CC3D9',
     justifyContent: 'center',
   },
   coordinatButtonOpacity: {
-    height: '10%',
+    height: 40,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: 'center',
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   downButtonSave: {
-    backgroundColor: '#8BC53F',
+    backgroundColor: '#00A859',
     borderRadius: 15,
     height: 30,
     width: 100,
