@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import homeScreen from './screen/Home';
 import newsDetail from './screen/News-detail';
 import education from './screen/Education';
+import educationDetail from './screen/Education_detail';
 import loginScreen from './screen/Login';
 import Menu from './components/menu';
 const { width, heigth } = Dimensions.get('window');
@@ -23,6 +24,18 @@ const EducationStack = createStackNavigator({
             }
         }),
 
+    },
+    EducationDetail: {
+        screen: educationDetail,
+        navigationOptions: ({ navigation }) => ({
+            title: 'ADKO PORTAL',
+            headerTintColor: 'white',
+            headerLeft: <Menu navigation={navigation} />,
+            headerStyle: {
+                backgroundColor: '#404E67',
+
+            }
+        }),
     },
 },
     {
@@ -60,10 +73,10 @@ const HomeStack = createStackNavigator({
         }),
     },
 },
-{
-    headerLayoutPreset: 'center',
+    {
+        headerLayoutPreset: 'center',
 
-}
+    }
 );
 const Drawer = createDrawerNavigator({
     Home: {
@@ -86,7 +99,7 @@ const Drawer = createDrawerNavigator({
     },
 },
     {
-        initialRouteName:'Education',
+        initialRouteName: 'Education',
         contentOptions: {
             activeTintColor: 'white',
             activeBackgroundColor: '#404E67',
