@@ -6,9 +6,29 @@ import { createAppContainer } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 import homeScreen from './screen/Home';
 import newsDetail from './screen/News-detail';
+import education from './screen/Education';
 import loginScreen from './screen/Login';
 import Menu from './components/menu';
 const { width, heigth } = Dimensions.get('window');
+const EducationStack = createStackNavigator({
+    Education: {
+        screen: education,
+        navigationOptions: ({ navigation }) => ({
+            title: 'ADKO PORTAL',
+            headerTintColor: 'white',
+            headerLeft: <Menu navigation={navigation} />,
+            headerStyle: {
+                backgroundColor: '#404E67',
+
+            }
+        }),
+
+    },
+},
+    {
+        headerLayoutPreset: 'center',
+
+    });
 const HomeStack = createStackNavigator({
     Home: {
         screen: homeScreen,
@@ -25,7 +45,7 @@ const HomeStack = createStackNavigator({
     },
     Login: {
         screen: loginScreen,
-        
+
     },
     NewsDetail: {
         screen: newsDetail,
@@ -39,12 +59,11 @@ const HomeStack = createStackNavigator({
             }
         }),
     },
-}, {
-    headerLayoutPreset: 'center',
-    initialRouteName: 'Home'
-
 },
+{
+    headerLayoutPreset: 'center',
 
+}
 );
 const Drawer = createDrawerNavigator({
     Home: {
@@ -56,8 +75,18 @@ const Drawer = createDrawerNavigator({
             ),
         },
     },
+    Education: {
+        screen: EducationStack,
+        navigationOptions: {
+            drawerLabel: 'Eğitimler',
+            drawerIcon: ({ tintColor }) => (
+                <Icon name="ios-school" size={22} color={tintColor} />
+            ),
+        },
+    },
 },
     {
+        initialRouteName:'Education',
         contentOptions: {
             activeTintColor: 'white',
             activeBackgroundColor: '#404E67',

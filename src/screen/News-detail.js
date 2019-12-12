@@ -11,7 +11,7 @@ export default class HomeTest extends Component {
   render() {
 
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',justifyContent:'flex-start'}}>
+      <View style={{ flex: 1, alignItems: 'center',justifyContent:'flex-start'}}>
         
         <View style={{ height: '15%', width: '90%',marginTop:20 }}>
           <Text style={{ fontSize: 20, alignSelf: 'center' }}>MİGROS İNSERT</Text>
