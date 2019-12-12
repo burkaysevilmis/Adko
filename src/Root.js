@@ -8,8 +8,39 @@ import homeScreen from './screen/Home';
 import newsDetail from './screen/News-detail';
 import VisitStart from './screen/VisitStart';
 import loginScreen from './screen/Login';
+import education from './screen/Education';
+import educationDetail from './screen/Education_detail';
 import Menu from './components/menu';
 const {width, heigth} = Dimensions.get('window');
+const EducationStack = createStackNavigator(
+  {
+    Education: {
+      screen: education,
+      navigationOptions: ({navigation}) => ({
+        title: 'ADKO PORTAL',
+        headerTintColor: 'white',
+        headerLeft: <Menu navigation={navigation} />,
+        headerStyle: {
+          backgroundColor: '#404E67',
+        },
+      }),
+    },
+    EducationDetail: {
+      screen: educationDetail,
+      navigationOptions: ({navigation}) => ({
+        title: 'ADKO PORTAL',
+        headerTintColor: 'white',
+        headerLeft: <Menu navigation={navigation} />,
+        headerStyle: {
+          backgroundColor: '#404E67',
+        },
+      }),
+    },
+  },
+  {
+    headerLayoutPreset: 'center',
+  },
+);
 const HomeStack = createStackNavigator(
   {
     Home: {
@@ -72,6 +103,15 @@ const Drawer = createDrawerNavigator(
         style: {paddingRight: 10},
         drawerIcon: ({tintColor}) => (
           <Icon name="ios-paper-plane" size={22} color={tintColor} />
+        ),
+      },
+    },
+    Education: {
+      screen: EducationStack,
+      navigationOptions: {
+        drawerLabel: 'Eğitimler',
+        drawerIcon: ({tintColor}) => (
+          <Icon name="ios-school" size={22} color={tintColor} />
         ),
       },
     },
