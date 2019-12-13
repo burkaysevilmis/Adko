@@ -1,12 +1,40 @@
-import React, { Component } from 'react';
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
-
+import React, {Component} from 'react';
+import {View, Text, ScrollView, TouchableOpacity} from 'react-native';
 
 export default class Education extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        };
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+    const veri = [];
+    for (let index = 1; index < 10; index++) {
+      veri.push(
+        <View
+          style={{
+            marginTop: 20,
+            width: '100%',
+            height: 'auto',
+            alignItems: 'center',
+          }}>
+          <View
+            style={{
+              width: '80%',
+              height: 45,
+              backgroundColor: '#2CC3D9',
+              justifyContent: 'center',
+              alignItems: 'center',
+              borderRadius: 15,
+            }}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.navigate('EducationDetail')}>
+              <Text style={{color: 'white', fontSize: 15}}>
+                {index}. INDOMIE ÜRÜN EĞİTİM
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>,
+      );
     }
     render() {
         const veri = [];
@@ -32,8 +60,9 @@ export default class Education extends Component {
                         {veri}
                     </ScrollView>
 
-                </View>
-            </View>
-        );
-    }
+          <ScrollView>{veri}</ScrollView>
+        </View>
+      </View>
+    );
+  }
 }
