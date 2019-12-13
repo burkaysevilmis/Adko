@@ -35,22 +35,24 @@ const DictionaryStack = createStackNavigator(
   },
 );
 
-
-const QuestionStack=createStackNavigator({
-  Question: {
-    screen: question,
-    navigationOptions: ({navigation}) => ({
-      title: 'ADKO PORTAL',
-      headerTintColor: 'white',
-      headerLeft: <Menu navigation={navigation} />,
-      headerStyle: {
-        backgroundColor: '#404E67',
-      },
-    }),
-  }
-},
-{
-  headerLayoutPreset: 'center',})
+const QuestionStack = createStackNavigator(
+  {
+    Question: {
+      screen: question,
+      navigationOptions: ({navigation}) => ({
+        title: 'ADKO PORTAL',
+        headerTintColor: 'white',
+        headerLeft: <Menu navigation={navigation} />,
+        headerStyle: {
+          backgroundColor: '#404E67',
+        },
+      }),
+    },
+  },
+  {
+    headerLayoutPreset: 'center',
+  },
+);
 const OfferStack = createStackNavigator(
   {
     Offer: {
@@ -196,7 +198,8 @@ const Drawer = createDrawerNavigator(
           <Icon name="ios-book" size={22} color={tintColor} />
         ),
       },
-    },Question: {
+    },
+    Question: {
       screen: QuestionStack,
       navigationOptions: {
         drawerLabel: 'Sorular',
@@ -207,7 +210,7 @@ const Drawer = createDrawerNavigator(
     },
   },
   {
-    initialRouteName:'Question',
+    initialRouteName: 'Question',
     contentOptions: {
       activeTintColor: 'white',
       activeBackgroundColor: '#404E67',

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {View, Text, ScrollView, StyleSheet} from 'react-native';
+import {View, Text, ScrollView, StyleSheet, Dimensions} from 'react-native';
 import {Table, TableWrapper, Row} from 'react-native-table-component';
+const {width, height} = Dimensions.get('window');
 export default class Offer extends Component {
   constructor(props) {
     super(props);
@@ -9,6 +10,13 @@ export default class Offer extends Component {
       widthArr: [50, 150, 75, 75, 100],
       heightArr: [50, 25, 25, 25, 25],
     };
+  }
+  componentDidMount() {
+    const deger = this.state.tableHead.length;
+    const bolum = width / deger;
+    this.setState({
+      widthArr: [bolum, bolum, bolum, bolum, bolum],
+    });
   }
 
   render() {
@@ -62,7 +70,7 @@ export default class Offer extends Component {
   }
 }
 const styles = StyleSheet.create({
-  container: {flex: 1, padding: 15, paddingTop: 10, backgroundColor: '#fff'},
+  container: {flex: 1, paddingTop: 10, backgroundColor: '#fff'},
   header: {height: 50, backgroundColor: '#537791'},
   text: {textAlign: 'center', fontWeight: '100'},
   dataWrapper: {marginTop: -1},
