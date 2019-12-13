@@ -9,9 +9,29 @@ import newsDetail from './screen/News-detail';
 import VisitStart from './screen/VisitStart';
 import loginScreen from './screen/Login';
 import education from './screen/Education';
+import dictionary from './screen/Dictionary';
 import educationDetail from './screen/Education_detail';
 import Menu from './components/menu';
 const {width, heigth} = Dimensions.get('window');
+
+const DictionaryStack=createStackNavigator({
+  Dictionary: {
+    screen: dictionary,
+    navigationOptions: ({navigation}) => ({
+      title: 'ADKO PORTAL',
+      headerTintColor: 'white',
+      headerLeft: <Menu navigation={navigation} />,
+      headerStyle: {
+        backgroundColor: '#404E67',
+      },
+    }),
+  }
+},
+{
+  headerLayoutPreset: 'center',
+
+})
+
 const EducationStack = createStackNavigator(
   {
     Education: {
@@ -39,6 +59,7 @@ const EducationStack = createStackNavigator(
   },
   {
     headerLayoutPreset: 'center',
+
   },
 );
 const HomeStack = createStackNavigator(
@@ -71,7 +92,7 @@ const HomeStack = createStackNavigator(
   },
   {
     headerLayoutPreset: 'center',
-    initialRouteName: 'Login',
+    
   },
 );
 const VisitStartStack = createStackNavigator(
@@ -121,9 +142,18 @@ const Drawer = createDrawerNavigator(
           <Icon name="ios-school" size={22} color={tintColor} />
         ),
       },
+    },  Dictionary: {
+      screen: DictionaryStack,
+      navigationOptions: {
+        drawerLabel: 'Sözlük',
+        drawerIcon: ({tintColor}) => (
+          <Icon name="ios-book" size={22} color={tintColor} />
+        ),
+      },
     },
   },
   {
+    initialRouteName:'Dictionary',
     contentOptions: {
       activeTintColor: 'white',
       activeBackgroundColor: '#404E67',
