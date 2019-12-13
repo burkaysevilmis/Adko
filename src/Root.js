@@ -12,26 +12,30 @@ import education from './screen/Education';
 import dictionary from './screen/Dictionary';
 import educationDetail from './screen/Education_detail';
 import question from './screen/Question';
+import Offer from './screen/Offer';
 import Menu from './components/menu';
 const {width, heigth} = Dimensions.get('window');
 
-const DictionaryStack=createStackNavigator({
-  Dictionary: {
-    screen: dictionary,
-    navigationOptions: ({navigation}) => ({
-      title: 'ADKO PORTAL',
-      headerTintColor: 'white',
-      headerLeft: <Menu navigation={navigation} />,
-      headerStyle: {
-        backgroundColor: '#404E67',
-      },
-    }),
-  }
-},
-{
-  headerLayoutPreset: 'center',
+const DictionaryStack = createStackNavigator(
+  {
+    Dictionary: {
+      screen: dictionary,
+      navigationOptions: ({navigation}) => ({
+        title: 'ADKO PORTAL',
+        headerTintColor: 'white',
+        headerLeft: <Menu navigation={navigation} />,
+        headerStyle: {
+          backgroundColor: '#404E67',
+        },
+      }),
+    },
+  },
+  {
+    headerLayoutPreset: 'center',
+  },
+);
 
-})
+
 const QuestionStack=createStackNavigator({
   Question: {
     screen: question,
@@ -46,9 +50,26 @@ const QuestionStack=createStackNavigator({
   }
 },
 {
-  headerLayoutPreset: 'center',
+  headerLayoutPreset: 'center',})
+const OfferStack = createStackNavigator(
+  {
+    Offer: {
+      screen: Offer,
+      navigationOptions: ({navigation}) => ({
+        title: 'ADKO PORTAL',
+        headerTintColor: 'white',
+        headerLeft: <Menu navigation={navigation} />,
+        headerStyle: {
+          backgroundColor: '#404E67',
+        },
+      }),
+    },
+  },
+  {
+    headerLayoutPreset: 'center',
+  },
+);
 
-})
 const EducationStack = createStackNavigator(
   {
     Education: {
@@ -76,7 +97,6 @@ const EducationStack = createStackNavigator(
   },
   {
     headerLayoutPreset: 'center',
-
   },
 );
 const HomeStack = createStackNavigator(
@@ -109,7 +129,6 @@ const HomeStack = createStackNavigator(
   },
   {
     headerLayoutPreset: 'center',
-    
   },
 );
 const VisitStartStack = createStackNavigator(
@@ -159,7 +178,17 @@ const Drawer = createDrawerNavigator(
           <Icon name="ios-school" size={22} color={tintColor} />
         ),
       },
-    },  Dictionary: {
+    },
+    Offer: {
+      screen: OfferStack,
+      navigationOptions: {
+        drawerLabel: 'Öneriler',
+        drawerIcon: ({tintColor}) => (
+          <Icon name="ios-shuffle" size={22} color={tintColor} />
+        ),
+      },
+    },
+    Dictionary: {
       screen: DictionaryStack,
       navigationOptions: {
         drawerLabel: 'Sözlük',
@@ -170,9 +199,9 @@ const Drawer = createDrawerNavigator(
     },Question: {
       screen: QuestionStack,
       navigationOptions: {
-        drawerLabel: 'Sözlük',
+        drawerLabel: 'Sorular',
         drawerIcon: ({tintColor}) => (
-          <Icon name="ios-help" size={22} color={tintColor} />
+          <Icon name="ios-help" size={30} color={tintColor} />
         ),
       },
     },
