@@ -10,7 +10,7 @@ export default class Education extends Component {
     }
     render() {
         const veri = [];
-        for (let index = 1; index < 10; index++) {
+        for (let index = 1; index < 20; index++) {
             veri.push(
                 <View style={{ marginTop: 20, width: '100%', height: 'auto', alignItems: 'center' }}>
                     <View style={{ width: '80%', height: 45, backgroundColor: '#2CC3D9', justifyContent: 'center', alignItems: 'center', borderRadius: 15 }}>
