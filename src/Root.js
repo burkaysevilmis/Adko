@@ -152,6 +152,7 @@ const HomeStack = createStackNavigator(
   },
   {
     headerLayoutPreset: 'center',
+    initialRouteName: 'Login',
   },
 );
 const VisitStartStack = createStackNavigator(
@@ -231,7 +232,10 @@ const Drawer = createDrawerNavigator(
     },
   },
   {
+<<<<<<< HEAD
     initialRouteName: 'Home',
+=======
+>>>>>>> 55bfc877f43bb99bdc5c024ab13763e148e66750
     contentOptions: {
       activeTintColor: 'white',
       activeBackgroundColor: '#404E67',
