@@ -23,7 +23,7 @@ export default class Home extends Component {
               borderRadius: 15,
               marginTop: 15,
             }}>
-            <View style={{height: '8%', justifyContent: 'center'}}>
+            <View style={{marginBottom:10,height: '8%', justifyContent: 'center'}}>
               <Text style={{alignSelf: 'center', fontSize: 18}}>
                 MİGROS REYON FOTOĞRFLARI
               </Text>
@@ -59,9 +59,9 @@ export default class Home extends Component {
               </View>
               <View
                 style={{
-                  borderRadius: 15,
+                  borderRadius: 7,
                   justifyContent: 'flex-end',
-                  height: '70%',
+                  height: '80%',
                   width: '25%',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -77,16 +77,16 @@ export default class Home extends Component {
           <View
             style={{
               width: '90%',
-              height: '5%',
+              height: '9%',
               backgroundColor: '#2CC3D9',
-              borderRadius: 15,
-              marginTop: 30,
+              borderRadius: 7,
+              marginTop: 40,
               alignItems: 'center',
               paddingLeft: 10,
               flexDirection: 'row',
             }}>
             <Text style={{fontSize: 14}}>Bu haberi okudunuz</Text>
-            <Icon style={{paddingLeft: 15}} name="ios-checkmark" size={38} />
+            <Icon style={{paddingLeft: 15,color:'white'}} name="ios-checkmark" size={38} />
           </View>
         </View>,
       );

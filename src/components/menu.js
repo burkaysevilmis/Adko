@@ -8,7 +8,7 @@ export default class menu extends Component {
   render() {
     return (
      <TouchableOpacity onPress={this.toggleMenu}>
-         <Icon style={{paddingHorizontal:10}} name="ios-menu" size={29} />
+         <Icon style={{paddingHorizontal:10}} name="ios-menu" color='white' size={29} />
      </TouchableOpacity>
     );
   }

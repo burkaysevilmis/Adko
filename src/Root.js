@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {Dimensions} from 'react-native';
+import {Dimensions,Button} from 'react-native';
 import {createDrawerNavigator} from 'react-navigation-drawer';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Icon2 from 'react-native-vector-icons/FontAwesome5';
 import homeScreen from './screen/Home';
 import newsDetail from './screen/News-detail';
 import VisitStart from './screen/VisitStart';
@@ -12,6 +13,7 @@ import education from './screen/Education';
 import dictionary from './screen/Dictionary';
 import educationDetail from './screen/Education_detail';
 import question from './screen/Question';
+import questionadd from './screen/QuestionAdd';
 import Offer from './screen/Offer';
 import Menu from './components/menu';
 const {width, heigth} = Dimensions.get('window');
@@ -43,6 +45,26 @@ const QuestionStack = createStackNavigator(
         title: 'ADKO PORTAL',
         headerTintColor: 'white',
         headerLeft: <Menu navigation={navigation} />,
+        headerStyle: {
+          backgroundColor: '#404E67',
+        },
+        headerRight:
+        () => (
+          <Icon2
+            onPress={() => navigation.navigate('QuestionAdd')}
+            style={{marginRight: 20,color:'white'}}
+            name="plus"
+            size={22}
+          />
+        )
+        ,
+      }),
+    },
+    QuestionAdd: {
+      screen: questionadd,
+      navigationOptions: ({navigation}) => ({
+        title: 'ADKO PORTAL',
+        headerTintColor: 'white',
         headerStyle: {
           backgroundColor: '#404E67',
         },
@@ -122,7 +144,6 @@ const HomeStack = createStackNavigator(
       navigationOptions: ({navigation}) => ({
         title: 'ADKO PORTAL',
         headerTintColor: 'white',
-        headerLeft: <Menu navigation={navigation} />,
         headerStyle: {
           backgroundColor: '#404E67',
         },
@@ -204,16 +225,19 @@ const Drawer = createDrawerNavigator(
       navigationOptions: {
         drawerLabel: 'Sorular',
         drawerIcon: ({tintColor}) => (
-          <Icon name="ios-help" size={30} color={tintColor} />
+          <Icon name="ios-help" size={35} color={tintColor} />
         ),
       },
     },
   },
   {
-    initialRouteName: 'Question',
+    initialRouteName: 'Home',
     contentOptions: {
       activeTintColor: 'white',
       activeBackgroundColor: '#404E67',
+      labelStyle:{
+        color:'white'
+      }
     },
     drawerBackgroundColor: '#404E67',
     drawerWidth: width / 1.5,

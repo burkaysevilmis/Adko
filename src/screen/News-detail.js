@@ -76,8 +76,8 @@ export default class HomeTest extends Component {
             </Text>
             <View
               style={{
-                borderRadius: 15,
-                height: '70%',
+                borderRadius: 7,
+                height: '80%',
                 width: '25%',
                 backgroundColor: '#2CC3D9',
                 flexDirection: 'row',
