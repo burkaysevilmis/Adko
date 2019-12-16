@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Dimensions,Button} from 'react-native';
+import {Dimensions, Button} from 'react-native';
 import {createDrawerNavigator} from 'react-navigation-drawer';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
@@ -48,16 +48,14 @@ const QuestionStack = createStackNavigator(
         headerStyle: {
           backgroundColor: '#404E67',
         },
-        headerRight:
-        () => (
+        headerRight: () => (
           <Icon2
             onPress={() => navigation.navigate('QuestionAdd')}
-            style={{marginRight: 20,color:'white'}}
+            style={{marginRight: 20, color: 'white'}}
             name="plus"
             size={22}
           />
-        )
-        ,
+        ),
       }),
     },
     QuestionAdd: {
@@ -232,16 +230,13 @@ const Drawer = createDrawerNavigator(
     },
   },
   {
-<<<<<<< HEAD
     initialRouteName: 'Home',
-=======
->>>>>>> 55bfc877f43bb99bdc5c024ab13763e148e66750
     contentOptions: {
       activeTintColor: 'white',
       activeBackgroundColor: '#404E67',
-      labelStyle:{
-        color:'white'
-      }
+      labelStyle: {
+        color: 'white',
+      },
     },
     drawerBackgroundColor: '#404E67',
     drawerWidth: width / 1.5,
