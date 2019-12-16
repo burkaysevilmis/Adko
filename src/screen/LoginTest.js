@@ -13,7 +13,11 @@ export default class LoginTest extends Component {
     return (
       <View style={{flex: 1}}>
         <View
-          style={{flex: 2, backgroundColor: '#404E67', alignItems: 'center'}}>
+          style={{
+            height: '65%',
+            backgroundColor: '#404E67',
+            alignItems: 'center',
+          }}>
           <Image
             style={{alignSelf: 'center', marginTop: 120}}
             source={require('../img/adko.png')}
@@ -26,10 +30,9 @@ export default class LoginTest extends Component {
               fontWeight: 'bold',
               fontSize: 25,
               color: '#F8FAF9',
-            }}
-          />
+            }}></Text>
         </View>
-        <View style={{flex: 1, backgroundColor: '#F8FAF9'}} />
+        <View style={{height: '35%', backgroundColor: '#F8FAF9'}}></View>
         <View
           style={{
             shadowColor: 'rgba(46, 229, 157, 0.4)',
@@ -42,7 +45,7 @@ export default class LoginTest extends Component {
             backgroundColor: '#F8FAF9',
             borderRadius: 10,
             position: 'absolute',
-            bottom: 120,
+            bottom: '15%',
             alignSelf: 'center',
           }}>
           <View style={{margin: 15}}>
@@ -69,13 +72,13 @@ export default class LoginTest extends Component {
             style={{
               backgroundColor: '#404E67',
               width: '50%',
+              justifyContent: 'center',
               alignSelf: 'center',
               borderRadius: 17,
-              marginTop: 4,
+              height: '20%',
+              marginTop: '2%',
             }}>
-            <TouchableOpacity
-              style={{height: 45, justifyContent: 'center'}}
-              onPress={() => navigate('Home')}>
+            <TouchableOpacity style={{justifyContent: 'center'}}>
               <Text
                 style={{alignSelf: 'center', color: '#F8FAF9', fontSize: 16}}>
                 Giriş Yap
