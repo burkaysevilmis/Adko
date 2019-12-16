@@ -138,7 +138,7 @@ const HomeStack = createStackNavigator(
     LoginTest: {
       screen: LoginTest,
       navigationOptions: ({navigation}) => ({
-        headerShown:false
+        headerShown: false,
       }),
     },
     Login: {
@@ -213,7 +213,12 @@ const Drawer = createDrawerNavigator(
       navigationOptions: {
         drawerLabel: 'Öneriler',
         drawerIcon: ({tintColor}) => (
-          <Icon name="ios-shuffle" style={{fontWeight:'bold'}} size={28} color={tintColor} />
+          <Icon
+            name="ios-shuffle"
+            style={{fontWeight: 'bold'}}
+            size={28}
+            color={tintColor}
+          />
         ),
       },
     },
@@ -237,11 +242,7 @@ const Drawer = createDrawerNavigator(
     },
   },
   {
-<<<<<<< HEAD
-    initialRouteName: 'Home',
-=======
     // initialRouteName: 'Home',
->>>>>>> be7109e7e2b6a0c812bdca7b22b4202dcf32d4f0
     contentOptions: {
       activeTintColor: 'white',
       activeBackgroundColor: '#404E67',
