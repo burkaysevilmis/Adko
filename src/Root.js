@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Dimensions,Button} from 'react-native';
+import {Dimensions, Button} from 'react-native';
 import {createDrawerNavigator} from 'react-navigation-drawer';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
@@ -49,16 +49,14 @@ const QuestionStack = createStackNavigator(
         headerStyle: {
           backgroundColor: '#404E67',
         },
-        headerRight:
-        () => (
+        headerRight: () => (
           <Icon2
             onPress={() => navigation.navigate('QuestionAdd')}
-            style={{marginRight: 20,color:'white'}}
+            style={{marginRight: 20, color: 'white'}}
             name="plus"
             size={22}
           />
-        )
-        ,
+        ),
       }),
     },
     QuestionAdd: {
@@ -140,7 +138,7 @@ const HomeStack = createStackNavigator(
     LoginTest: {
       screen: LoginTest,
       navigationOptions: ({navigation}) => ({
-        headerShown:false
+        headerShown: false,
       }),
     },
     Login: {
@@ -215,7 +213,12 @@ const Drawer = createDrawerNavigator(
       navigationOptions: {
         drawerLabel: 'Öneriler',
         drawerIcon: ({tintColor}) => (
-          <Icon name="ios-shuffle" style={{fontWeight:'bold'}} size={28} color={tintColor} />
+          <Icon
+            name="ios-shuffle"
+            style={{fontWeight: 'bold'}}
+            size={28}
+            color={tintColor}
+          />
         ),
       },
     },
@@ -243,9 +246,9 @@ const Drawer = createDrawerNavigator(
     contentOptions: {
       activeTintColor: 'white',
       activeBackgroundColor: '#404E67',
-      labelStyle:{
-        color:'white'
-      }
+      labelStyle: {
+        color: 'white',
+      },
     },
     drawerBackgroundColor: '#404E67',
     drawerWidth: width / 1.5,
