@@ -1,16 +1,12 @@
-/* eslint-disable react-native/no-inline-styles */
-import React, {Component} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-  TextInput,
-  Dimensions,
-} from 'react-native';
-const {width, heigth} = Dimensions.get('window');
-export default class Login extends Component {
+import React, { Component } from 'react';
+import { View, Text, Image, TextInput, Button, TouchableOpacity, Dimensions,SafeAreaView } from 'react-native';
+const { width, height } = Dimensions.get('window');
+export default class LoginTest extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
   static navigationOptions = {
     headerShown: false,
   };
@@ -18,146 +14,57 @@ export default class Login extends Component {
   render() {
     const {navigate} = this.props.navigation;
     return (
-      <View style={styles.container}>
-        <Image
-          style={styles.backgroundPhoto}
-          source={require('../img/background.png')}
-        />
-        <View style={styles.box1} />
-        <View style={styles.box2}>
-          <View style={styles.logo}>
-            <Image source={require('../img/adko.png')} />
-          </View>
-          <View style={styles.form}>
+      <SafeAreaView style={{ height:height,width:width,backgroundColor:'#404E67'}} >
+        <View style={{height:height*.75,width:width,alignItems:'center'}}>
+<Image style={{marginTop:height/5}} source={require('../img/adko.png')}/>
+        </View>
+        <View style={{height:height*.25,width:width,backgroundColor:'white'}}>
+
+        </View>
+        <View style={{ shadowColor: 'black',
+            shadowOpacity: 1.5,
+            elevation: 8,
+            shadowRadius: 20,
+            shadowOffset: {width: 1, height: 2},position:'absolute',height:height/3,bottom:62,width:width*0.9,alignSelf:'center',backgroundColor:'white',borderRadius:16}}>
+        <View style={{margin: 15}}>
+            <Text style={{color: 'gray'}}>Kullanıcı Adı</Text>
             <TextInput
-              placeholder="Kullanıcı Adı"
-              placeholderTextColor="white"
               style={{
-                width: '70%',
-                height: 45,
-                borderWidth: 1,
-                borderColor: 'white',
-                marginBottom: 20,
-                paddingLeft: 15,
+                height: height*0.06,
+                borderBottomColor: 'gray',
+                borderBottomWidth: 1,
               }}
             />
+          </View>
+          <View style={{margin: 15}}>
+            <Text style={{color: 'gray'}}>Şifre</Text>
             <TextInput
-              placeholder="Şifre"
-              placeholderTextColor="white"
-              secureTextEntry={true}
               style={{
-                width: '70%',
-                height: 45,
-                borderWidth: 1,
-                borderColor: 'white',
-                paddingLeft: 15,
+                height: height*0.06,
+                borderBottomColor: 'gray',
+                borderBottomWidth: 1,
               }}
             />
-            <TouchableOpacity
-              style={{width: '100%', alignItems: 'center'}}
-              onPress={() => navigate('Home')}>
-              <View
-                style={{
-                  marginTop: 15,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  width: '70%',
-                  height: 40,
-                  borderRadius: 2,
-                  backgroundColor: '#2D2B2B',
-                }}>
-                <Text style={{fontSize: 20, color: 'white'}}>Giriş</Text>
-              </View>
-            </TouchableOpacity>
           </View>
-          <View style={styles.lang}>
-            <TouchableOpacity style={{flex: 1, alignItems: 'flex-end'}}>
-              <Image
-                style={{
-                  marginRight: 5,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  width: '30%',
-                  height: 35,
-                  borderRadius: 20,
-                  resizeMode: 'cover',
-                }}
-                source={require('../img/tr.png')}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity style={{flex: 1, alignItems: 'center'}}>
-              <Image
-                style={{
-                  marginRight: 5,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  width: '30%',
-                  height: 35,
-                  borderRadius: 20,
-                  resizeMode: 'cover',
-                }}
-                source={require('../img/eng.png')}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity style={{flex: 1, alignItems: 'flex-start'}}>
-              <Image
-                style={{
-                  marginRight: 5,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  width: '30%',
-                  height: 35,
-                  borderRadius: 20,
-                  resizeMode: 'cover',
-                }}
-                source={require('../img/arab.png')}
-              />
+          <View
+            style={{
+              backgroundColor: '#404E67',
+              width: width*0.5,
+              justifyContent: 'center',
+              alignSelf: 'center',
+              borderRadius: 17,
+              height: height*0.07,
+              marginTop:height*0.03,
+            }}>
+            <TouchableOpacity    onPress={() => navigate('Home')} style={{justifyContent: 'center'}}>
+              <Text
+                style={{alignSelf: 'center', color: '#F8FAF9', fontSize: 16}}>
+                Giriş Yap
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.box3} />
-      </View>
+      </SafeAreaView>
     );
   }
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  box1: {
-    flex: 1,
-  },
-
-  box2: {
-    flex: 4,
-    opacity: 0.6,
-    backgroundColor: '#979797',
-  },
-
-  box3: {
-    flex: 1,
-  },
-  logo: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  form: {
-    flex: 3,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  lang: {
-    flex: 1,
-    flexDirection: 'row',
-  },
-  backgroundPhoto: {
-    height: heigth,
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    alignItems: 'stretch',
-    bottom: 0,
-    right: 0,
-  },
-});

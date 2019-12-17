@@ -9,7 +9,6 @@ import homeScreen from './screen/Home';
 import newsDetail from './screen/News-detail';
 import VisitStart from './screen/VisitStart';
 import loginScreen from './screen/Login';
-import LoginTest from './screen/LoginTest';
 import education from './screen/Education';
 import dictionary from './screen/Dictionary';
 import educationDetail from './screen/Education_detail';
@@ -135,12 +134,6 @@ const HomeStack = createStackNavigator(
         },
       }),
     },
-    LoginTest: {
-      screen: LoginTest,
-      navigationOptions: ({navigation}) => ({
-        headerShown: false,
-      }),
-    },
     Login: {
       screen: loginScreen,
     },
@@ -157,7 +150,7 @@ const HomeStack = createStackNavigator(
   },
   {
     headerLayoutPreset: 'center',
-    initialRouteName: 'LoginTest',
+    initialRouteName: 'Login',
   },
 );
 const VisitStartStack = createStackNavigator(
