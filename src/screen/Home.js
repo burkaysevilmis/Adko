@@ -53,7 +53,7 @@ export default class Home extends Component {
                 justifyContent: 'space-between',
               }}>
               <View>
-                <Text style={{paddingLeft: 10, color: '#2CC3D9', fontSize: 16}}>
+                <Text style={{paddingLeft: 10, color: '#404E67', fontSize: 16}}>
                   04/02/2019
                 </Text>
               </View>
@@ -65,7 +65,7 @@ export default class Home extends Component {
                   width: '25%',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  backgroundColor: '#2CC3D9',
+                  backgroundColor: '#404E67',
                 }}>
                 <TouchableOpacity
                   onPress={() => this.props.navigation.navigate('NewsDetail')}>
@@ -78,14 +78,14 @@ export default class Home extends Component {
             style={{
               width: '90%',
               height: '9%',
-              backgroundColor: '#2CC3D9',
+              backgroundColor: '#404E67',
               borderRadius: 7,
               marginTop: 40,
               alignItems: 'center',
               paddingLeft: 10,
               flexDirection: 'row',
             }}>
-            <Text style={{fontSize: 14}}>Bu haberi okudunuz</Text>
+            <Text style={{fontSize: 14,color:'white'}}>Bu haberi okudunuz</Text>
             <Icon style={{paddingLeft: 15,color:'white'}} name="ios-checkmark" size={38} />
           </View>
         </View>,

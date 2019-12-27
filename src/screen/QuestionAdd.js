@@ -51,7 +51,7 @@ export default class QuestionAdd extends Component {
               height: '15%',
               marginTop: 20,
               justifyContent: 'center',
-              backgroundColor: '#0a60ff',
+              backgroundColor: '#404E67',
             }}>
             <TouchableOpacity
               style={{

@@ -32,7 +32,7 @@ export default class HomeTest extends Component {
           <Icon
             style={{
               alignSelf: 'center',
-              color: '#2CC3D9',
+              color: '#404E67',
             }}
             name="ios-arrow-down"
             size={45}
@@ -69,7 +69,7 @@ export default class HomeTest extends Component {
             }}>
             <Text
               style={{
-                color: '#2CC3D9',
+                color: '#404E67',
                 fontSize: 16,
               }}>
               01 / 01 / 2019
@@ -79,7 +79,7 @@ export default class HomeTest extends Component {
                 borderRadius: 7,
                 height: '80%',
                 width: '25%',
-                backgroundColor: '#2CC3D9',
+                backgroundColor: '#404E67',
                 flexDirection: 'row',
                 justifyContent: 'center',
                 alignItems: 'center',

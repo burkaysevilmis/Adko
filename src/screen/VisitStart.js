@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   coordinatButtonContainer: {
     width: '75%',
     borderRadius: 7,
-    backgroundColor: '#2CC3D9',
+    backgroundColor: '#404E67',
     justifyContent: 'center',
   },
   coordinatButtonOpacity: {
