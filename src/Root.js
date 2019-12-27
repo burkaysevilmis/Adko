@@ -48,6 +48,7 @@ const QuestionStack = createStackNavigator(
         headerStyle: {
           backgroundColor: '#404E67',
         },
+        headerBackTitle: 'Geri',
         headerRight: () => (
           <Icon2
             onPress={() => navigation.navigate('QuestionAdd')}

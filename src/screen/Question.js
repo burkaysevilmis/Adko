@@ -1,5 +1,12 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, ScrollView, Dimensions,Button,TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 import {Table, TableWrapper, Row} from 'react-native-table-component';
 const {width, height} = Dimensions.get('window');
 export default class Question extends Component {
@@ -23,39 +30,51 @@ export default class Question extends Component {
     for (let i = 0; i < 3; i += 1) {
       const rowData = [];
       for (let j = 0; j < 3; j += 1) {
-          if(i%2==1){
-            if(j===2){
-                rowData.push(
-                    <View style={{height:'100%',width:'100%',backgroundColor:'#f44336',justifyContent:'center',
-                    alignItems:'center'}}>
-                    <TouchableOpacity height='15'  style={{backgroundColor:'#f44336'}} ><Text style={{color:'white',fontSize:15}}>
-                    Bekleniyor</Text></TouchableOpacity></View>
-                )
-               }
-               else{
-                 rowData.push(i);
-               }
+        if (i % 2 == 1) {
+          if (j === 2) {
+            rowData.push(
+              <View
+                style={{
+                  height: '100%',
+                  width: '100%',
+                  backgroundColor: '#f44336',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <TouchableOpacity
+                  height="15"
+                  style={{backgroundColor: '#f44336'}}>
+                  <Text style={{color: 'white', fontSize: 15}}>Bekleniyor</Text>
+                </TouchableOpacity>
+              </View>,
+            );
+          } else {
+            rowData.push(i);
           }
-          else{
-            if(j===2){
-                rowData.push(
-                    <View style={{height:'100%',width:'100%',backgroundColor:'green',justifyContent:'center',
-                    alignItems:'center'}}>
-                    <TouchableOpacity height='15'  style={{backgroundColor:'green'}} ><Text style={{color:'white',fontSize:15}}>
-                    Cevaplandı</Text></TouchableOpacity>
-
-                    </View>
-                )
-               }
-               else{
-                 rowData.push(i);
-               }
+        } else {
+          if (j === 2) {
+            rowData.push(
+              <View
+                style={{
+                  height: '100%',
+                  width: '100%',
+                  backgroundColor: 'green',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <TouchableOpacity
+                  height="15"
+                  style={{backgroundColor: 'green'}}>
+                  <Text style={{color: 'white', fontSize: 15}}>Cevaplandı</Text>
+                </TouchableOpacity>
+              </View>,
+            );
+          } else {
+            rowData.push(i);
           }
-        
-        
+        }
       }
       tableData.push(rowData);
-      
     }
     return (
       <View style={styles.container}>
@@ -77,10 +96,7 @@ export default class Question extends Component {
                     data={rowData}
                     widthArr={state.widthArr}
                     heightArr={state.heightArr}
-                    style={[
-                      styles.row,
-                      index % 2 && {backgroundColor: '#fff'},
-                    ]}
+                    style={[styles.row, index % 2 && {backgroundColor: '#fff'}]}
                     textStyle={styles.text}
                   />
                 ))}

@@ -50,7 +50,9 @@ export default class HomeTest extends Component {
           <TouchableOpacity style={styles.downButtonSave}>
             <Text style={styles.downButtonText}>Kaydet</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.downButtonQuit}>
+          <TouchableOpacity
+            style={styles.downButtonQuit}
+            onPress={() => this.props.navigation.navigate('Home')}>
             <Text style={styles.downButtonText}>Vazgeç</Text>
           </TouchableOpacity>
         </View>
@@ -69,6 +71,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     alignSelf: 'center',
     marginBottom: 15,
+    marginTop: 15,
   },
   coordinatButtonContainer: {
     width: '75%',
